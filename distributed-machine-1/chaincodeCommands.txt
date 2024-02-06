@@ -4,6 +4,9 @@ peer lifecycle chaincode package basic.tar.gz --path ../asset-transfer-basic/cha
 peer lifecycle chaincode install basic.tar.gz
 
 
+export CHAINCODE_ID=$(peer lifecycle chaincode calculatepackageid basic.tar.gz) && echo $CHAINCODE_ID
+
+
 peer lifecycle chaincode checkcommitreadiness --channelID mychannel --name basic --version 1.0.1 --sequence 1 --output json
 
 
